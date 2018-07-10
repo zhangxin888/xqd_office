@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>协同办公（客服）</title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/page.css">
+	<link rel="stylesheet" href="../css/main.css" />
+
+	<script type="text/javascript" src="../js/rem.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/layer/layer.js"></script>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/md5.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	
+</head>
+<body>
+	<div class='bggrey'>
+		<div class="top white">
+			<div class="top-mid fontsize">录入信息</div>
+			<div class="top-left"><img src="../images/right.png" alt="" class="top-righticon"></div>
+			<div class="top-right"></div>
+		</div>
+		<div class="line"></div>
+		<div class="typein-list white">
+			<div class="typein-item">
+				<div class="typein-text">公司名称</div> <input type="text" v-model="company" placeholder="请输入公司名称"> </div>
+				<div class="typein-item">
+					<div class="typein-text">法人代表</div> <input type="text" v-model="fr_name" placeholder="如：李先生"> </div>
+					<div class="typein-item">
+						<div class="typein-text">法人手机</div>
+						<input type="text" placeholder="请输入手机号" v-model="fr_mobile" name="telephone" style="width: 5rem;">
+						<span class="anstext3">*</span>
+					</div>
+					<div class="typein-item">
+						<div class="typein-text">公司负责人</div>
+						<input type="text" placeholder="请输负责人姓名" name="username" v-model="fz_name" style="width: 5rem;">
+						<span class="anstext3">*</span>
+					</div>
+					<div class="typein-item">
+						<div class="typein-text">负责人手机</div>
+						<input type="text" placeholder="请输入手机号码" v-model="fz_mobile" name="telephone1" style="width: 5rem;">
+						<span class="anstext3">*</span>
+					</div>
+					<!-- 区域 -->
+					<div class="infor-xxxx-item itembr"> <span>区域</span> 
+						<span> 
+							<select name="area" v-model="area" class="anstext2 talignr">
+								<option value="1">沈北</option>
+								<option value="2">大东</option>
+								<option value="3">和平</option>
+								<option value="4">沈河</option>
+								<option value="5">浑南</option>
+								<option value="6">皇姑</option>
+								<option value="7">于洪</option>
+								<option value="8">铁西</option>
+								<option value="9">自贸</option>
+							</select>
+						</span> </div>
+						<!-- 规模 -->
+						<div class="infor-xxxx-item itembr"> <span>公司规模</span> 
+							<span> 
+								<select name="size" v-model="size" class="anstext2 talignr">
+									<option value="1">一般纳税人</option>
+									<option value="2">小规模纳税人</option>
+									<option value="3">个体工商户</option>
+								</select>
+							</span> </div>
+							<!-- 服务项目 -->
+							<div class="typein-checkbox">
+								<div><span class="typein-text1">服务项目</span> <span class="typein-text2">（单选项）</span></div>
+								<div> <input type="radio" onclick="changeon()" value="1" v-model="project" name="checked" checked="checked"> <span class="typein-text3 marginr">公司注册</span>
+									<input type="radio" onclick="changeon()" value="2" v-model="project" name="checked" /> <span class="typein-text3 marginr">财税代账</span> </div>
+								</div>
+								<div class="toggle">
+									<div class="typein-items garybr ">
+										<div class="typein-text">注册费用</div> <input type="text " v-model="zc_price" placeholder="请输入注册费用！">
+										<div class="marginr ">￥</div>
+									</div>
+								</div>
+								<div class="toggle">
+									<div class="typein-items garybr ">
+										<div class="typein-text ">代账费用</div> <input type="text " v-model="dz_price" placeholder="请输入代账费用！">
+										<div class="marginr ">￥</div>
+									</div>
+									<div class="typein-items garybr ">
+										<div class="typein-text ">代账周期</div> <input type="text " v_model="date" placeholder="请输入代账周期！">
+										<div class="marginr ">月</div>
+									</div>
+								</div>
+								<div class="typein-items ">
+									<div class="typein-text ">备注:</div> <textarea name="introduce" v-model="remark">备注信息</textarea>
+								</div>
+							</div>
+							<div class="infortypein-btnbox ">
+								<input type="submit" value="完成"  @click="greet" class="login-btn anstextbg5 margintop " /> </div>
+
+							</div>
+							<script type="text/javascript">
+								changeon();
+								function changeon() {
+									var checkboxes = document.getElementsByName("checked");
+									var toggles = document.getElementsByClassName("toggle");
+									for(i = 0; i < checkboxes.length; i++) {
+										if(checkboxes[i].checked) {
+											toggles[i].style.display = "block";
+										} else {
+											toggles[i].style.display = "none";
+										}
+									}
+								}
+							</script>
+							<script type="text/javascript" src="../js/service/company.js"></script>
+						</body>
+						</html>

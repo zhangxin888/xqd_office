@@ -1,0 +1,161 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	/* Firefox */
+	-webkit-box-sizing: border-box;
+	/* Safari */
+	font-size:0.28rem;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+}
+
+img {
+	display: block;
+}
+
+ul,ol,dl {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+h1,h2,h3,h4,h5 {
+	font-weight: normal;
+}
+
+button{
+	appearance: none;
+	-moz-appearance: none;
+	/* Firefox */
+	-webkit-appearance: none;
+	/* Safari and Chrome */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* 点击去除高亮的颜色*/
+	outline: none;
+	border: none;
+	width:4rem;
+	font-size:0.28rem;
+}
+input{
+	appearance: none;
+	-moz-appearance: none;
+	/* Firefox */
+	-webkit-appearance: none;
+	/* Safari and Chrome */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* 点击去除高亮的颜色*/
+	outline: none;
+	border: none;
+	
+	font-size:0.28rem;
+}
+select{
+	outline: none;
+	border: none;
+	font-size:0.28rem;
+}
+select option{
+	height:0.9rem;
+	width:1.1rem;
+	background: #EFEFF4;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	color: #b0b0b0;
+	font-size:0.28rem;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+	color: #b0b0b0;
+	font-size:0.28rem;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+	color: #b0b0b0;
+	font-size:0.28rem;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+	color: #b0b0b0;
+	font-size:0.28rem;
+}
+/*居中*/
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/*灰色背景*/
+
+.bggrey {
+	background-color: #EFEFF4;
+}
+/*白色背景*/
+.white{
+	background: #ffffff;
+}
+/*隔断*/
+.line{
+	height: 0.2rem;
+	background-color: #EFEFF4;
+	width:100%;
+}
+.line1{
+	height: 0.1rem;
+	background-color: #EFEFF4;
+	width:100%;
+}
+.line-satrap{
+	height:0.01rem;
+	background-color: #EFEFF4;
+	width:100%;
+}
+/*白色边框*/
+.whitebr{
+	border:1px solid #ffffff;
+}
+/*白色字*/
+.whitet{
+	color:#FFFFFF;
+}
+/*右对齐*/
+.talignr{
+	text-align: right;
+}
+/*灰色边框*/
+.garybr{
+	border-bottom:1px solid #E5E5E5;
+}
+.marginr{
+	margin-right: 0.28rem;
+}
+.fontsize{
+	font-size: 0.36rem
+}
+.positionr{
+	position: relative;
+}
+.garybg{
+	background: #FF0000;
+}
+.bg1{
+	background: #e9f1ff;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>协同办公（客服）</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/page.css">
+
+
+		<script type="text/javascript" src="../js/rem.js"></script>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script type="text/javascript" src="../js/layer/layer.js"></script>
+		<script type="text/javascript" src="../js/vue.min.js"></script>
+		<script type="text/javascript" src="../js/md5.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+
+
+	</head>
+
+	<body>
+	<div class="top">
+		<div class="top-mid fontsize">公司信息</div>
+		<div class="top-left"> </div>
+		<div class="top-right" onclick="location.href='company.html'"><img src="../images/add.png" class="top-righticon" alt=""></div>
+	</div>
+	<div class="search">
+		<div class="search-main"> <img src="../images/search.png" alt="" class="search-img"> <input type="text" placeholder="公司" class="search-input">
+			<div class="search-del center"><img src="../images/del.jpg" alt="" class="search-del-img"></div>
+		</div>
+		<div class="search-btn center anstextbg5">搜索</div>
+	</div>
+	<!-- 内容 -->
+	<div class="gskf" id="app" >
+		<ul>
+			<li v-for="val in list" @click="greet" v-bind-cid="val.cid">
+				<div class="gskf1" >
+					<div class="gskf-title">{{val.company}}</div>
+					<div class="gskf-name">{{val.name}}&nbsp;&nbsp;{{val.mobile}}</div>
+					<div class="gskf-all">
+						<div class="gskf-left">
+							<div class="gskf-yw">
+								<div class="gskf-yw1 anstext5">注册公司</div>
+								<!--<div class="gskf-yw2 anstext5">代账</div>-->
+							</div>
+							<div class="gskf-time">{{val.time}}</div>
+						</div>
+						<div class="gskf-right">
+							<div class="gskf-right-e" v-if="val.status==0">未分配</div>
+							<div class="gskf-right-s" v-else>已分配</div>
+						</div>
+					</div>
+				</div>
+				<div class="line1"></div>
+
+			</li>
+		</ul>
+
+		<div class="gskf-shuaxin">(按照时间顺序，上拉刷新) </div>
+	</div>
+		<!-- 适配js -->
+		<script type="text/javascript" src="../js/service/list.js"></script>
+	</body>
+</html>
